@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="script.js"></script>
 </head>
-<body>
-    
+<body> 
 </body>
 </html>
+
+<!-- Reflektion Uppgift 1
+     1. Script-tagen excekveras där den ligger och eftersom html filen alltid läses uppifrån och ner vill vi ha den längst ner
+     i body om det är en vanlig "<script src="script.js">", för att html sidan ska läsas klar INNAN scriptet körs. Scriptet körs alltså
+     i den ordning det ligger i.
+     Jag kör "<script defer src="script.js">" istället i head med förklaringen nedan.   
+    
+     2. Attributet defer som jag använder gör så att scriptet laddas direkt i bakgrunden pararellt med att
+     html sidan läses in men excekveras först när html sidan är klar. Det gör att jag har det högst upp i head istället
+     för längst ner i body.   -->
