@@ -44,3 +44,55 @@ console.log(mBike); // funkar även utanför kodblocket
 /****************************************************************************************************************************/
 
 // Uppgift 3
+
+// == 
+console.log(5 == 5);
+console.log('5' == 5); // String och int. True för att den typomvandlar värdet.
+
+// ===
+console.log(5 === 5);
+console.log('5' === 5); // String och int. False för att den INTE typomvandlar. Strikt jämförelse
+
+// NaN, null, undefined
+console.log(NaN == NaN); // false
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+
+console.log(undefined ? 'truthy': 'falsy'); // undefined är så falsy
+
+/* Reflektion uppgift 3
+    1.  Först provade jag: 5 == 5, det är ju då såklart samma (true). Båda är int.
+        Sedan '5' == 5, trots att jag jämför en string med en int blir det samma true(),
+        pga att den typovandlar när det är två ==. 5 är 5 helt enkelt oavsett olika variabeltyper..
+        
+        Sedan provade jag: 5 === 5, det är ju då också samma (true). Båda är int.
+        Sedan '5' === 5, Här blir det annorlunda mot ovan, det blir false.
+        pga att det gör en strikt jämförelse, den typomvandlar INTE int/string.
+        
+    2. Om ett uttryck står för sig själv i en tenerary operator eller inom paranteserna i
+       en if-sats så utvärderas uttrycket om det är "truthy" eller "falsy". Efter det tolkas
+       det som antingen true om "truthy" eller false om "falsy". Den tolkar altså truthy/falsy
+       som respektive boolvärde i en if-sats exempelvis.
+       Dessa är alla falsy värden:
+       false,
+       null,
+       undefined,
+       0,
+       -0,
+       NaN,
+       ""/''
+       ALLA andra värden och objekt är truthy. (Kap. Logical AND (&&))
+       
+    3. NaN: Representerar ett värde som är vad som helt, men INTE en siffra. Om man
+       jämför NaN med NaN så är de dock aldrig samma värde.
+       
+       undefined: Är ett värde till en variabel som deklarerats men inte tilldelats ett värde.
+       Som någon sorts standarndvärde(undefined) som js ger den.
+       Det är ett specialvärde som är samma som sig själv i en jämförelse.    
+       
+       null: Är ett värde som är helt tomt. exempelvis let a = null; Variabeln a tildelas
+       null och blir helt tom. Avsiktligt.
+
+       Notering: Vid jämförelsen undefined == null får vi true pga att båda värdena ändå
+       representerar inget värde, men med === blir det false då de är olika typer.  
+       */
