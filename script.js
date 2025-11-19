@@ -96,3 +96,61 @@ console.log(undefined ? 'truthy': 'falsy'); // undefined är så falsy
        Notering: Vid jämförelsen undefined == null får vi true pga att båda värdena ändå
        representerar inget värde, men med === blir det false då de är olika typer.  
        */
+
+       /**********************************************************************************************/
+
+// Uppgift 4
+let name = "Petter"
+// 1. Väljer att göra en funktionsdeklaration för att jag tycker det är enklast nu i början.
+//console.log(name); // Error. Kan inte accessa 'name' innan initialization.
+function greet(name) 
+{
+//let name = "Petter" .Error variabeln har redan blivit deklararerad.
+console.log(name); // Här funkar det, men 'name' blir Anders. Notering: Om inte greet anropats så funkar det inte.
+return "Hej " + name;
+}
+//console.log(name); // Error. Kan inte accessa 'name' innan initialization.
+// 2. Testar att skriva ut direkt i console.log(), funkar fint.
+console.log(greet("Anders")); 
+
+// 3.
+//let name = "Petter"
+console.log(name); // Det fungerar men 'name' blir överstruket
+
+/* Reflektion uppgift 4
+    1. Funktionsdeklaration - 1. nyckelordet function som används för att skapa funktionen, 2. funktionsnamnet, 
+                              3. (med ev parametrar.), 4 {funktionens innehåll}.
+                              = function x(ev. parameter) {själva funktionen}
+                              Kan nås innan den defineras i koden.
+
+       Funktionsuttryck - 1. Deklarera variabel, 2. tilldela den med funktionen. 
+                             = const x = function() {}. Först deklaration av x, sen tilldela x funktionen.
+                            Kan INTE nås innan den definerats
+
+        Arrowfunktioner - 1. Deklarera variabel, 2. Tilldela den parametrar (), 3. pil =>, 4. själva funktionen
+                          i {}. 
+                          = const x = (parametrar) => {funktion}.
+                          Kan INTE nås innan den definerats
+
+    2. Med en funktionsdeklaration kan jag anropa den innan den är definerad i koden. Det gör att om jag deklarerar 
+    funktionen på rad 25 så kan jag ändå anropa funktionen på rad 10 tex. Själklart efter också.
+
+    Gällande både funktionsuttryck och arrowfunktioner går inte det. Du måste definera funktionen INNAN du kan 
+    anropa den för att det ska fungera.  
+
+    3. Ändrar jag 'name' längst ner på rad 116 så ändras bara utskriften på rad 117.
+       Ändrar jag högst upp ovanför functionen ändras också bara utskriften på rad 117.
+       Ändrar jag i funktikonens {} så blir det error. variabeln 'name' är redan deklarerad.
+       Slutsatsats: Ändrar jag utanför funktionen så påverkar det bara utanför funktionen. 
+       Innanför funktionen är den redan deklarerad och det går inte att ändra i funktionen.
+       
+    4. Parameter - Är vad som förväntas skickas in i en funktion. Parametrarna defineras när man
+       skapar funkionen, ex function x(a,b). Här är parametrarna a och b.
+
+       Variabel: - Är ett sparat namngett värde enkelt uttryckt. Du spar ett värde i en variabel.
+       ex. const name = "Pär". Här är 'name' variabeln och som lagrar värdet "Pär"
+
+       Argument - Det är värdena man skickar till funktionen när man anropar den. Ex med funktionen greet().
+       console.log(greet("Anders"));. Här är "Anders" argumentet. 
+    */ 
+
